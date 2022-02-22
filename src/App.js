@@ -27,15 +27,16 @@ class App extends Component {
   handleDelete = cardId => {
     const cards = this.state.cards.filter(card => card.id !== cardId);
     this.setState({cards})
-  }
+  };
+
   handleIncrement = card => {
     const cards = [...this.state.cards];
     const id = cards.indexOf(card);
     cards[id] = {...card};
     cards[id].quantity++;
-    this.setState({ card });
-    console.log(this.setState({ card }));
-  }
+    this.setState({ cards });
+    console.log(this.setState({ cards }));
+  };
 
   render(){
     return (
@@ -44,7 +45,7 @@ class App extends Component {
         <Navbar/>
   
         <div className="container">
-          <h1> Cosa desideri ordinare? </h1>
+          <h1 className="mt-5 pb-5"> Cosa desideri ordinare? </h1>
   
           <div className="row"> 
           {this.state.cards.map(card => (
